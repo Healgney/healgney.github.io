@@ -1,16 +1,20 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import path from 'node:path';
 
-const deployTarget = process.env.DEPLOY_TARGET;
-const repoName = process.env.GH_REPO_NAME ?? 'personal-site';
+const nodeEnv = (
+  globalThis as typeof globalThis & {
+    process: { env: Record<string, string | undefined> };
+  }
+).process.env;
+const deployTarget = nodeEnv.DEPLOY_TARGET;
+const repoName = nodeEnv.GH_REPO_NAME ?? 'personal-site';
 const base = deployTarget === 'gh-pages' && repoName ? `/${repoName}/` : '/';
 
 export default defineConfig({
   base,
   plugins: [react()],
   resolve: {
-    alias: { '@': path.resolve(__dirname, 'src') },
+    alias: { '@': new URL('./src', import.meta.url).pathname },
   },
   build: {
     target: 'es2022',

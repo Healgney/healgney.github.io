@@ -1,7 +1,9 @@
 @import '@fontsource/inter/400.css';
 @import '@fontsource/inter/500.css';
 @import '@fontsource/inter/600.css';
+@import '@fontsource/inter/700.css';
 @import '@fontsource/jetbrains-mono/400.css';
+@import '@fontsource/jetbrains-mono/500.css';
 
 @tailwind base;
 @tailwind components;
@@ -9,35 +11,36 @@
 
 @layer base {
   :root {
-    color-scheme: dark;
+    color-scheme: light;
   }
-  html,
-  body {
-    background-color: #06080f;
-    color: #e6e8ee;
+  html {
+    scroll-behavior: smooth;
   }
   body {
+    background-color: #fafbfc;
+    color: #0f172a;
     font-feature-settings: 'ss01', 'cv11';
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   ::selection {
-    background: rgba(34, 211, 238, 0.25);
-    color: #ffffff;
+    background: rgba(6, 182, 212, 0.2);
+    color: #0f172a;
   }
   /* Subtle scrollbar */
   ::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
   }
   ::-webkit-scrollbar-track {
-    background: transparent;
+    background: #f1f5f9;
   }
   ::-webkit-scrollbar-thumb {
-    background: #1b2233;
-    border-radius: 8px;
+    background: #cbd5e1;
+    border-radius: 6px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #2a3450;
+    background: #94a3b8;
   }
 }
 

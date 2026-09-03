@@ -8,4 +8,13 @@ dist-ssr
 .env.local
 .env.*.local
 *.log
+
+# dev workspace leftovers (from zip)
+archive/
+output/
+outputs/
+preview/
+scripts/
+tmp/
+work/
 *.tsbuildinfo
