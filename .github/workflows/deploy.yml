@@ -34,7 +34,7 @@ jobs:
       - name: Build (with GH Pages base)
         env:
           DEPLOY_TARGET: gh-pages
-          GH_REPO_NAME: ${{ github.event.repository.name }}
+          GH_REPO_NAME: ''
         run: pnpm build
 
       - name: Ensure .nojekyll
