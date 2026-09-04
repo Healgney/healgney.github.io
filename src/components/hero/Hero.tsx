@@ -17,13 +17,13 @@ export function Hero() {
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-40 bg-gradient-to-b from-transparent to-[#fafbfc]"
+        className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-40 bg-gradient-to-b from-transparent to-[#fafbfc] dark:to-black"
       />
 
       <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-y-10 lg:grid-cols-[minmax(18rem,0.78fr)_minmax(0,1.22fr)] lg:items-center lg:gap-x-16 xl:gap-x-24">
         <figure className="order-2 mx-auto w-full max-w-2xl lg:order-1 lg:mx-0 lg:w-[340px] lg:max-w-full lg:translate-y-7">
-          <div className="rounded-[2rem] bg-gradient-to-br from-[#d8c9ae] via-[#61584d] to-[#c6b28d] p-px shadow-[0_24px_60px_-32px_rgba(30,23,14,0.5)] lg:rounded-[50%] lg:p-[5px] lg:shadow-[0_32px_76px_-30px_rgba(30,23,14,0.62)]">
-            <div className="overflow-hidden rounded-[calc(2rem-1px)] bg-[#27231f] ring-1 ring-white/45 lg:rounded-[50%]">
+          <div className="rounded-[2rem] bg-gradient-to-br from-[#d8c9ae] via-[#61584d] to-[#c6b28d] p-px shadow-[0_24px_60px_-32px_rgba(30,23,14,0.5)] lg:rounded-[50%] lg:p-[5px] lg:shadow-[0_32px_76px_-30px_rgba(30,23,14,0.62)] dark:shadow-[0_0_50px_rgba(0,0,0,0.9)]">
+            <div className="overflow-hidden rounded-[calc(2rem-1px)] bg-[#27231f] ring-1 ring-white/45 lg:rounded-[50%] dark:ring-white/20">
               <img
                 src={profile.heroImage.src}
                 alt={profile.heroImage.alt}
@@ -41,39 +41,39 @@ export function Hero() {
 
         <div className="order-1 max-w-2xl space-y-7 lg:order-2 lg:-translate-y-5 lg:space-y-8">
           <div className="space-y-3">
-            <div className="flex items-center gap-2 font-mono text-xs font-medium uppercase tracking-[0.18em] text-slate-400 sm:text-sm">
+            <div className="flex items-center gap-2 font-mono text-xs font-medium uppercase tracking-[0.18em] text-slate-400 dark:text-neutral-500 sm:text-sm">
               <span>{profile.name}</span>
-              <span aria-hidden="true" className="text-slate-300">
+              <span aria-hidden="true" className="text-slate-300 dark:text-neutral-700">
                 ·
               </span>
               <span>{profile.chineseName}</span>
             </div>
 
-            <h1 className="font-serif text-5xl font-semibold leading-[0.98] tracking-[-0.045em] text-slate-950 sm:text-6xl lg:text-7xl">
+            <h1 className="font-serif text-5xl font-semibold leading-[0.98] tracking-[-0.045em] text-slate-950 dark:text-white sm:text-6xl lg:text-7xl">
               {profile.displayName}
             </h1>
 
-            <p className="text-lg font-semibold tracking-[-0.01em] text-slate-700 sm:text-xl">
+            <p className="text-lg font-semibold tracking-[-0.01em] text-slate-700 dark:text-neutral-300 sm:text-xl">
               {profile.tagline}
             </p>
           </div>
 
-          <p className="max-w-xl text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
+          <p className="max-w-xl text-base leading-7 text-slate-600 dark:text-neutral-400 sm:text-lg sm:leading-8">
             {profile.bio}
           </p>
 
-          <div className="space-y-3 border-l border-slate-300 pl-4">
-            <p className="font-mono text-xs font-medium uppercase tracking-[0.12em] text-slate-500 sm:text-[13px]">
+          <div className="space-y-3 border-l border-slate-300 dark:border-neutral-800 pl-4">
+            <p className="font-mono text-xs font-medium uppercase tracking-[0.12em] text-slate-500 dark:text-neutral-400 sm:text-[13px]">
               {profile.heroMeta}
             </p>
 
-            <p className="text-sm leading-6 text-slate-500">
+            <p className="text-sm leading-6 text-slate-500 dark:text-neutral-400">
               Also building{' '}
               <a
                 href={profile.venture.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-1 font-medium text-slate-700 underline decoration-[#b89767]/55 underline-offset-4 transition-colors hover:text-cyan-700 hover:decoration-cyan-500 focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 focus-visible:ring-offset-2"
+                className="group inline-flex items-center gap-1 font-medium text-slate-700 underline decoration-[#b89767]/55 underline-offset-4 transition-colors hover:text-cyan-700 hover:decoration-cyan-500 dark:text-neutral-200 dark:hover:text-cyan-400 dark:hover:decoration-cyan-400 focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 focus-visible:ring-offset-2"
               >
                 <span>{profile.venture.name}</span>
                 <ArrowUpRight
@@ -88,9 +88,9 @@ export function Hero() {
           <div className="flex flex-wrap items-center gap-3 pt-1">
             <a
               href={`mailto:${profile.email}`}
-              className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white/80 px-4 py-2.5 text-sm font-medium text-slate-700 shadow-sm transition hover:border-slate-400 hover:bg-white hover:text-slate-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 focus-visible:ring-offset-2"
+              className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white/80 px-4 py-2.5 text-sm font-medium text-slate-700 shadow-sm transition hover:border-slate-400 hover:bg-white hover:text-slate-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 focus-visible:ring-offset-2 dark:border-white/10 dark:bg-neutral-900/80 dark:text-neutral-200 dark:hover:border-white/20 dark:hover:bg-neutral-800 dark:hover:text-white"
             >
-              <Mail aria-hidden="true" className="h-4 w-4 text-slate-500" />
+              <Mail aria-hidden="true" className="h-4 w-4 text-slate-500 dark:text-neutral-400" />
               <span>Email</span>
             </a>
 
@@ -98,9 +98,9 @@ export function Hero() {
               href={profile.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white/80 px-4 py-2.5 text-sm font-medium text-slate-700 shadow-sm transition hover:border-slate-400 hover:bg-white hover:text-slate-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 focus-visible:ring-offset-2"
+              className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white/80 px-4 py-2.5 text-sm font-medium text-slate-700 shadow-sm transition hover:border-slate-400 hover:bg-white hover:text-slate-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 focus-visible:ring-offset-2 dark:border-white/10 dark:bg-neutral-900/80 dark:text-neutral-200 dark:hover:border-white/20 dark:hover:bg-neutral-800 dark:hover:text-white"
             >
-              <Github aria-hidden="true" className="h-4 w-4 text-slate-600" />
+              <Github aria-hidden="true" className="h-4 w-4 text-slate-600 dark:text-neutral-400" />
               <span>GitHub</span>
             </a>
           </div>

@@ -4,12 +4,26 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <meta name="color-scheme" content="light" />
-    <meta name="theme-color" content="#ffffff" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
     <meta name="description" content="Frank Wang (WANG Can) — AI Algorithm Engineer, Multimodal Researcher, and Founder & Builder of Swishly. Research in MLLMs, deepfake forensics, and generative vision." />
     <title>Frank Wang (WANG Can) — AI Algorithm Engineer & Multimodal Researcher</title>
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var isDark = stored ? stored === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (isDark) {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
   </head>
-  <body class="bg-[#fafbfc] text-slate-900 antialiased selection:bg-cyan-100 selection:text-slate-900">
+  <body class="bg-[#fafbfc] text-slate-900 antialiased selection:bg-cyan-100 selection:text-slate-900 dark:bg-black dark:text-neutral-100 dark:selection:bg-cyan-950 dark:selection:text-cyan-200">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
