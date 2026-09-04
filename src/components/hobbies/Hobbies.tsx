@@ -10,10 +10,12 @@ import {
 } from 'lucide-react';
 import { profile } from '@/data/profile';
 
-// Custom Basketball Icon for clean representation
+// Custom Basketball Icon with authentic 8-panel seams
 function BasketballIcon({ className }: { className?: string }) {
   return (
     <svg
+      width="20"
+      height="20"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
@@ -24,9 +26,10 @@ function BasketballIcon({ className }: { className?: string }) {
       aria-hidden="true"
     >
       <circle cx="12" cy="12" r="10" />
-      <path d="M5 5a10 10 0 0 0 14 14" />
-      <path d="M19 5a10 10 0 0 0-14 14" />
-      <line x1="2" y1="12" x2="22" y2="12" />
+      <path d="M2 12h20" />
+      <path d="M12 2v20" />
+      <path d="M4.93 4.93a12 12 0 0 1 0 14.14" />
+      <path d="M19.07 4.93a12 12 0 0 0 0 14.14" />
     </svg>
   );
 }
@@ -88,7 +91,7 @@ export function Hobbies() {
               <div className="flex items-center justify-between gap-3">
                 <div className="flex items-center gap-2.5">
                   <div className="p-2 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-600 group-hover:scale-105 transition-transform backdrop-blur-xs dark:bg-amber-950/50 dark:border-amber-800/50 dark:text-amber-400">
-                    <BasketballIcon className="w-4.5 h-4.5" />
+                    <BasketballIcon className="w-5 h-5" />
                   </div>
                   <h3 className="text-base sm:text-lg font-bold text-slate-900 group-hover:text-amber-800 transition-colors dark:text-white dark:group-hover:text-amber-400">
                     Basketball & Shot Mechanics
@@ -157,7 +160,7 @@ export function Hobbies() {
               <div className="flex items-center justify-between gap-2">
                 <div className="flex items-center gap-2.5">
                   <div className="p-2 rounded-xl bg-indigo-50 border border-indigo-100 text-indigo-600 group-hover:scale-105 transition-transform backdrop-blur-xs dark:bg-indigo-950/50 dark:border-indigo-800/50 dark:text-indigo-400">
-                    <Camera className="w-4.5 h-4.5" />
+                    <Camera className="w-5 h-5" />
                   </div>
                   <h3 className="text-base sm:text-lg font-bold text-slate-900 group-hover:text-indigo-700 transition-colors dark:text-white dark:group-hover:text-indigo-400">
                     Photography
@@ -213,7 +216,7 @@ export function Hobbies() {
               <div className="flex items-center justify-between gap-2">
                 <div className="flex items-center gap-2.5">
                   <div className="p-2 rounded-xl bg-cyan-50 border border-cyan-100 text-cyan-600 group-hover:scale-105 transition-transform backdrop-blur-xs dark:bg-cyan-950/50 dark:border-cyan-800/50 dark:text-cyan-400">
-                    <Snowflake className="w-4.5 h-4.5" />
+                    <Snowflake className="w-5 h-5" />
                   </div>
                   <h3 className="text-base sm:text-lg font-bold text-slate-900 group-hover:text-cyan-700 transition-colors dark:text-white dark:group-hover:text-cyan-400">
                     Snowboarding / Skiing
@@ -247,7 +250,7 @@ export function Hobbies() {
             transition={{ duration: 0.35, delay: 0.15 }}
             className="rounded-2xl sm:rounded-3xl bg-white/95 border border-slate-200/90 p-5 sm:p-5.5 shadow-card hover:shadow-card-hover transition-all flex flex-col justify-between group relative overflow-hidden dark:bg-[#121212] dark:border-white/10 dark:hover:border-emerald-500/30 dark:shadow-none"
           >
-            {/* Masked Background Photo: Scaled down and shifted down to show person, blue vest & paddle */}
+            {/* Masked Background Photo: Full bleed coverage with optimal framing on paddler and orange blade */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-2xl sm:rounded-3xl z-0">
               <img
                 src="/hobbies/kayaking.jpg"
@@ -255,7 +258,7 @@ export function Hobbies() {
                 aria-hidden="true"
                 loading="lazy"
                 decoding="async"
-                className="w-full h-full object-cover object-[72%_42%] scale-90 sm:scale-95 origin-center opacity-50 group-hover:opacity-75 transition-all duration-500 filter saturate-[0.85] contrast-[0.98] group-hover:saturate-100"
+                className="w-full h-full object-cover object-[70%_66%] opacity-55 group-hover:opacity-80 transition-all duration-500 filter saturate-[0.9] contrast-[0.98] group-hover:saturate-100"
                 style={{
                   maskImage:
                     'linear-gradient(to right, transparent 0%, transparent 18%, rgba(0, 0, 0, 0.45) 42%, rgba(0, 0, 0, 1) 75%)',
@@ -269,7 +272,7 @@ export function Hobbies() {
               <div className="flex items-center justify-between gap-2">
                 <div className="flex items-center gap-2.5">
                   <div className="p-2 rounded-xl bg-emerald-50 border border-emerald-100 text-emerald-600 group-hover:scale-105 transition-transform backdrop-blur-xs dark:bg-emerald-950/50 dark:border-emerald-800/50 dark:text-emerald-400">
-                    <Waves className="w-4.5 h-4.5" />
+                    <Waves className="w-5 h-5" />
                   </div>
                   <h3 className="text-base sm:text-lg font-bold text-slate-900 group-hover:text-emerald-700 transition-colors dark:text-white dark:group-hover:text-emerald-400">
                     Kayaking
@@ -325,7 +328,7 @@ export function Hobbies() {
               <div className="flex items-center justify-between gap-2">
                 <div className="flex items-center gap-2.5">
                   <div className="p-2 rounded-xl bg-rose-50 border border-rose-100 text-rose-600 group-hover:scale-105 transition-transform backdrop-blur-xs dark:bg-rose-950/50 dark:border-rose-800/50 dark:text-rose-400">
-                    <Headphones className="w-4.5 h-4.5" />
+                    <Headphones className="w-5 h-5" />
                   </div>
                   <h3 className="text-base sm:text-lg font-bold text-slate-900 group-hover:text-rose-700 transition-colors dark:text-white dark:group-hover:text-rose-400">
                     Hip-Hop & Beats
@@ -344,6 +347,9 @@ export function Hobbies() {
             <div className="pt-3 border-t border-slate-100/90 dark:border-white/10 mt-3 flex flex-wrap gap-1.5 relative z-10">
               <span className="px-2 py-0.5 rounded-md text-[11px] font-mono bg-slate-50/90 border border-slate-200/80 text-slate-600 dark:bg-neutral-900 dark:border-white/10 dark:text-neutral-300">
                 #BoomBap
+              </span>
+              <span className="px-2 py-0.5 rounded-md text-[11px] font-mono bg-slate-50/90 border border-slate-200/80 text-slate-600 dark:bg-neutral-900 dark:border-white/10 dark:text-neutral-300">
+                #Trap/Drill
               </span>
               <span className="px-2 py-0.5 rounded-md text-[11px] font-mono bg-slate-50/90 border border-slate-200/80 text-slate-600 dark:bg-neutral-900 dark:border-white/10 dark:text-neutral-300">
                 #FocusFlow

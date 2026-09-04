@@ -21,7 +21,8 @@ export function Hero() {
       />
 
       <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-y-10 lg:grid-cols-[minmax(18rem,0.78fr)_minmax(0,1.22fr)] lg:items-center lg:gap-x-16 xl:gap-x-24">
-        <figure className="order-2 mx-auto w-full max-w-2xl lg:order-1 lg:mx-0 lg:w-[340px] lg:max-w-full lg:translate-y-7">
+        {/* Desktop Portrait (Left Column on lg+) */}
+        <figure className="hidden lg:block lg:order-1 lg:mx-0 lg:w-[340px] lg:max-w-full lg:translate-y-7">
           <div className="rounded-[2rem] bg-gradient-to-br from-[#d8c9ae] via-[#61584d] to-[#c6b28d] p-px shadow-[0_24px_60px_-32px_rgba(30,23,14,0.5)] lg:rounded-[50%] lg:p-[5px] lg:shadow-[0_32px_76px_-30px_rgba(30,23,14,0.62)] dark:shadow-[0_0_50px_rgba(0,0,0,0.9)]">
             <div className="overflow-hidden rounded-[calc(2rem-1px)] bg-[#27231f] ring-1 ring-white/45 lg:rounded-[50%] dark:ring-white/20">
               <img
@@ -39,23 +40,45 @@ export function Hero() {
           </div>
         </figure>
 
+        {/* Content Column */}
         <div className="order-1 max-w-2xl space-y-7 lg:order-2 lg:-translate-y-5 lg:space-y-8">
-          <div className="space-y-3">
-            <div className="flex items-center gap-2 font-mono text-xs font-medium uppercase tracking-[0.18em] text-slate-400 dark:text-neutral-500 sm:text-sm">
-              <span>{profile.name}</span>
-              <span aria-hidden="true" className="text-slate-300 dark:text-neutral-700">
-                ·
-              </span>
-              <span>{profile.chineseName}</span>
+          {/* Header Row: Title on Left, Parallel Portrait on Right (Mobile) */}
+          <div className="flex items-start justify-between gap-3 sm:gap-6 lg:block">
+            <div className="min-w-0 flex-1 space-y-2.5 sm:space-y-3">
+              <div className="flex items-center gap-2 font-mono text-xs font-medium uppercase tracking-[0.18em] text-slate-400 dark:text-neutral-500 sm:text-sm">
+                <span>{profile.name}</span>
+                <span aria-hidden="true" className="text-slate-300 dark:text-neutral-700">
+                  ·
+                </span>
+                <span>{profile.chineseName}</span>
+              </div>
+
+              <h1 className="font-serif text-[2.5rem] sm:text-5xl md:text-6xl lg:text-7xl font-semibold leading-[0.98] tracking-[-0.045em] text-slate-950 dark:text-white break-words">
+                {profile.displayName}
+              </h1>
+
+              <p className="text-base sm:text-lg lg:text-xl font-semibold tracking-[-0.01em] text-slate-700 dark:text-neutral-300 leading-snug">
+                {profile.tagline}
+              </p>
             </div>
 
-            <h1 className="font-serif text-5xl font-semibold leading-[0.98] tracking-[-0.045em] text-slate-950 dark:text-white sm:text-6xl lg:text-7xl">
-              {profile.displayName}
-            </h1>
-
-            <p className="text-lg font-semibold tracking-[-0.01em] text-slate-700 dark:text-neutral-300 sm:text-xl">
-              {profile.tagline}
-            </p>
+            {/* Mobile Parallel Portrait */}
+            <div className="shrink-0 lg:hidden pt-1">
+              <div className="w-24 sm:w-28 md:w-32 aspect-[4/5] rounded-2xl bg-gradient-to-br from-[#d8c9ae] via-[#61584d] to-[#c6b28d] p-0.5 shadow-[0_12px_28px_-8px_rgba(30,23,14,0.4)] dark:shadow-[0_0_25px_rgba(0,0,0,0.8)]">
+                <div className="h-full w-full overflow-hidden rounded-[calc(1rem-2px)] bg-[#27231f] ring-1 ring-white/40 dark:ring-white/20">
+                  <img
+                    src={profile.heroImage.src}
+                    alt={profile.heroImage.alt}
+                    width={profile.heroImage.width}
+                    height={profile.heroImage.height}
+                    loading="eager"
+                    {...{ fetchpriority: 'high' }}
+                    decoding="async"
+                    className="h-full w-full object-cover object-[52%_22%]"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
 
           <p className="max-w-xl text-base leading-7 text-slate-600 dark:text-neutral-400 sm:text-lg sm:leading-8">
